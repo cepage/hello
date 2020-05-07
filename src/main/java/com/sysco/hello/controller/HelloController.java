@@ -27,10 +27,4 @@ public class HelloController {
     {
         return new ColorResponse( _webProperties.getColor() );
     }
-
-    @Bean
-    public CommandLineRunner run()
-    {
-        return args -> System.out.println( "Password = " + _webProperties.getPassword() );
-    }
 }

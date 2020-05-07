@@ -23,7 +23,7 @@ public class HelloApplication {
     @Bean
     public CommandLineRunner run()
     {
-        return args -> System.out.println( "Color = " + _webProperties.getColor() );
+        return args -> System.out.println( "Password = " + _webProperties.getPassword() );
     }
 
 }
