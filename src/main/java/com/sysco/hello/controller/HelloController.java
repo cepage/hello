@@ -2,6 +2,8 @@ package com.sysco.hello.controller;
 
 import com.sysco.hello.config.WebProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,6 @@ public class HelloController {
 
     @RequestMapping( "/" )
     public String home( Model model ) throws Exception {
-        model.addAttribute( "webColor", _webProperties.getColor() );
         return "index";
     }
 
@@ -25,5 +26,11 @@ public class HelloController {
     public @ResponseBody ColorResponse refresh()
     {
         return new ColorResponse( _webProperties.getColor() );
+    }
+
+    @Bean
+    public CommandLineRunner run()
+    {
+        return args -> System.out.println( "Password = " + _webProperties.getPassword() );
     }
 }

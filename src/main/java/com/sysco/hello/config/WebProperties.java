@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class WebProperties {
 
     private String _color;
+    private String _password;
 
     public String getColor() {
         return _color;
@@ -15,5 +16,13 @@ public class WebProperties {
 
     public void setColor(String color) {
         _color = color;
+    }
+
+    public String getPassword() {
+        return _password;
+    }
+
+    public void setPassword(String password) {
+        _password = password;
     }
 }
