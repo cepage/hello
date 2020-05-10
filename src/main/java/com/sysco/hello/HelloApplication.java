@@ -20,10 +20,4 @@ public class HelloApplication {
         SpringApplication.run(HelloApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner run()
-    {
-        return args -> System.out.println( "Password = " + _webProperties.getPassword() );
-    }
-
 }
