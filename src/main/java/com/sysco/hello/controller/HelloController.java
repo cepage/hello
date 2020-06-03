@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class HelloController {
 
+    public static final String BANNER_TEXT = "Hello, World of ";
     @Autowired
     private WebProperties _webProperties;
 
@@ -38,6 +39,6 @@ public class HelloController {
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET,
                 new HttpEntity<>(new HttpHeaders()), String.class);
         System.out.println( responseEntity.getBody() );
-        return new RefreshResponse( _webProperties.getColor(), "Hello, World of " + responseEntity.getBody() );
+        return new RefreshResponse( _webProperties.getColor(), BANNER_TEXT + responseEntity.getBody() );
     }
 }
