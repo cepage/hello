@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class HelloController {
 
-    public static final String BANNER_TEXT = "HELLO, World of ";
+    public static final String BANNER_TEXT = "Hello, World of ";
     @Autowired
     private WebProperties _webProperties;
 
