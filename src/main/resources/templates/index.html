@@ -32,11 +32,6 @@
 
 <script th:inline="javascript">
     /*<![CDATA[*/
-    var writeUrl = [[@{/write}]];
-        $( '#writeButton' ).click( function() {
-            $.getJSON( '/write' ).
-            success( refresh );
-        });
     $( '#refreshButton' ).click( refresh );
 
     function refresh() {
@@ -50,10 +45,6 @@
         $('#headerTitle').text( data.bannerText );
         $('#headerTitle').css( 'color', data.color );
     }
-
-    $( '#shutdownButton' ).click( function() {
-        $.post( '/shutdown', {} );
-    } );
 
     $( document ).ready( refresh );
     /*]]>*/

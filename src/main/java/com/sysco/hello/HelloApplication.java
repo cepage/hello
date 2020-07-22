@@ -9,8 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-// @EnableCircuitBreaker
 public class HelloApplication {
 
     @Autowired
@@ -19,5 +17,4 @@ public class HelloApplication {
     public static void main(String[] args) {
         SpringApplication.run(HelloApplication.class, args);
     }
-
 }
